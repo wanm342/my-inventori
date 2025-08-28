@@ -6,6 +6,7 @@ use App\Http\Controllers\VehicleController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::redirect('/', 'home');
 
 Auth::routes();
 
@@ -30,3 +31,4 @@ Route::post('/vehicles/{vehicle}/edit', [VehicleController::class, 'update'])->n
 Route::get('/vehicles/{vehicle}/destroy', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
 
 
+//user Route

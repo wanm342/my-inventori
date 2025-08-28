@@ -28,9 +28,18 @@
                                     <td>{{ $inventory->serial_no }}</td>  
                                     <td>{{ $inventory->user->name }} - {{ $inventory->user->email }}</td>
 
-                                    <td> <a href="{{ route('inventories.show', $inventory) }}" class="btn btn-danger btn-sm">Show Ler </a></td>
+                                    
+                                    <td>
+                                    @can ('view', $inventory)    
+                                    <a href="{{ route('inventories.show', $inventory) }}" class="btn btn-danger btn-sm">Show Ler 
+                                    </a> 
+                                    @endcan
 
-                                     <td> <a href="{{ route('inventories.edit', $inventory) }}" class="btn btn-danger btn-sm">Edit Ler </a></td>
+                                </td>
+
+                                     <td> @can ('view', $inventory)  
+                                        <a href="{{ route('inventories.edit', $inventory) }}" class="btn btn-danger btn-sm">Edit Ler </a> @endcan
+                                    </td>
 
                                       <td>  <a href="{{ route('inventories.destroy', $inventory) }}" 
                                            class="btn btn-info btn-sm"

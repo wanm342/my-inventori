@@ -19,6 +19,7 @@
                                 <th>Jenama</th>
                                 <th>Warna</th>
                                 <th>No Plate</th>
+                                <th>user</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -30,6 +31,9 @@
                                     <td>{{ $vehicle->jenama }}</td>  
                                     <td>{{ $vehicle->warna }}</td>  
                                     <td>{{ $vehicle->plate_no }}</td> 
+                                    <td>{{ $vehicle->user->name }} - {{ $vehicle->user->email }}</td>
+
+
                                     <td> <a href="{{ route('vehicles.show', $vehicle) }}" class="btn btn-success btn-sm">Show  </a>
                                     <a href="{{ route('vehicles.edit', $vehicle) }}" class="btn btn-primary btn-sm">Edit  </a>
                                     <a href="{{ route('vehicles.destroy', $vehicle) }}" 

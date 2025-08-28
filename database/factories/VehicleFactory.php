@@ -40,6 +40,8 @@ class VehicleFactory extends Factory
             'model' => $model,
             'warna' => $this->faker->randomElement($warna),
             'plate_no' => $this->generatePlateNumber(),
+            'user_id' => \App\Models\User::factory(),
+            //'user_id' => \App\Models\User::inRandomOrder->first()->id() ?? \App\Models\User::factory(),
         ];
     }
 

@@ -23,6 +23,7 @@ class InventoryFactory extends Factory
             //'color'=> $this->faker->safeColorName(),
             'serial_no' => $this->faker->numberBetween(1,100),
             'user_id' => \App\Models\User::factory(),
+            //'user_id' => \App\Models\User::inRandomOrder->first()->id() ?? \App\Models\User::factory(),
         ];
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('jenama');
             $table->string('warna');
             $table->string('plate_no');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

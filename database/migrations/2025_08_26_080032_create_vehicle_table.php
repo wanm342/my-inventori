@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('warna');
             $table->string('plate_no');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

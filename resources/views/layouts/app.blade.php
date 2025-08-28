@@ -39,7 +39,15 @@
                     <li class="nav-item">
                           <a class="nav-link fw-bold" href="{{ route('inventories.create') }}">Inventory Create</a>
                     </li>
-                    </ul>
+
+
+                    <li class="nav-item">
+                          <a class="nav-link fw-bold" href="{{ route('vehicles.index') }}">Vehicles Index</a>
+                    </li>
+
+                    <li class="nav-item">
+                          <a class="nav-link fw-bold" href="{{ route('vehicles.create') }}">Vehicles Create
+                </ul> 
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

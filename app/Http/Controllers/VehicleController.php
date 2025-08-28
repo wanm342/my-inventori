@@ -35,10 +35,45 @@ class VehicleController extends Controller
     $vehicle->save();
 
     //return to inventory index
-    return redirect ( '/vehicle');
+    return redirect ( 'vehicles');
    }
+
     public function show(vehicle $vehicle)
     {
-        return view('vehicle.show', compact('vehicle'));
+        return view('vehicles.show', compact('vehicle'));
+    }
+
+    
+    // function edit
+    public function edit(vehicle $vehicle)
+    {
+        return view('vehicles.edit', compact('vehicle'));
+    }
+
+    //function update
+
+    public function update (Request $request, vehicle $vehicle)
+    {
+
+        // update using model
+    
+        $vehicle->model = $request->model;
+        $vehicle->jenama =$request->jenama;
+        $vehicle->warna = $request->warna;
+        $vehicle->plate_no = $request->plate_no;
+        $vehicle->save();
+
+     // return to vehicle index
+
+        return redirect ('/vehicles');
+    }
+    // func delete 
+
+     public function destroy (vehicle $vehicle)
+    {
+     $vehicle->delete();
+     
+     return redirect()->route('vehicles.index');
+       
     }
 }

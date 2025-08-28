@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Vehicle;
 class VehicleController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
    {
     //query all inventories from table inventories using model

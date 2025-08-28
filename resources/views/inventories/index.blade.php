@@ -41,9 +41,10 @@
                                         <a href="{{ route('inventories.edit', $inventory) }}" class="btn btn-danger btn-sm">Edit Ler </a> @endcan
                                     </td>
 
-                                      <td>  <a href="{{ route('inventories.destroy', $inventory) }}" 
+                                      <td>  @can ('view', $inventory) 
+                                        <a href="{{ route('inventories.destroy', $inventory) }}" 
                                            class="btn btn-info btn-sm"
-                                           onclick="return confirm('Are you sure want to delete?')">DELETE</a></td>
+                                           onclick="return confirm('Are you sure want to delete?')">DELETE</a>@endcan</td>
                                 </tr>
                             @endforeach
                         </tbody>

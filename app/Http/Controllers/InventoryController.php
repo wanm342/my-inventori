@@ -81,6 +81,9 @@ class InventoryController extends Controller
 
     public function destroy (Inventory $inventory)
     {
+    // policy delete
+     $this->authorize('delete', $inventory);
+
      $inventory->delete();
      
      return redirect()->route('inventories.index');
